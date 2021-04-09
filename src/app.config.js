@@ -9,8 +9,17 @@ module.exports = {
   },
   tabBar: {
     list: [
-      {pagePath: 'pages/index/index', text: 'index'},
-      {pagePath: 'pages/me/index', text: 'me'},
+      {pagePath: 'pages/index/index',
+        text: 'index',
+        iconPath: '/images/home.png',
+        selectedIconPath: '/images/homeclick.png',
+      },
+      {
+        pagePath: 'pages/me/index',
+        text: 'me',
+        iconPath: '/images/user.png',
+        selectedIconPath: '/images/userclick.png'
+      },
     ]
   }
 }
