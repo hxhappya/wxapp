@@ -4,14 +4,12 @@
 }
 
 .logo {
-  animation: logo-spin infinite 20s linear;
   height: 240px;
   width: 240px;
   pointer-events: none;
 }
 
 .text {
-  margin-top: 64px;
 }
 
 .header {

@@ -70,5 +70,6 @@ module.exports = {
     'USER': true,
     '$': true,
     '$timeout': true,
+    'wx': true,
   }
 }
