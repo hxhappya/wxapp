@@ -3,11 +3,14 @@ import * as React from 'react'
 import {useState} from 'react'
 import {View, Image, Button} from 'remax/wechat'
 import DisplayNumber from '../../components/DisplayNumber'
+import {useContext} from '../../hooks'
 
 import './index.css'
 
 
 const IndexPage = () => {
+  const [context] = useContext()
+
   const [number, setNumber] = useState(0)
   const add1 = () => setNumber(prevNumber => prevNumber + 1)
   const subtract1 = () => setNumber(prevNumber => prevNumber - 1)
@@ -16,7 +19,7 @@ const IndexPage = () => {
     <View className="app">
       <View className="header">
         <Image
-          src="https://gw.alipayobjects.com/mdn/rms_b5fcc5/afts/img/A*OGyZSI087zkAAAAAAAAAAABkARQnAQ"
+          src={context.user.avatarUrl}
           className="logo"
           alt="logo"
         />
