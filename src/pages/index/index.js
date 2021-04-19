@@ -25,6 +25,7 @@ const IndexPage = () => {
         />
         <View className="text">
           <DisplayNumber number={number}></DisplayNumber>
+          <DisplayNumber number={context.user.credit}></DisplayNumber>
         </View>
       </View>
       <Button onClick={add1}>+</Button>
