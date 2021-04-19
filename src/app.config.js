@@ -5,7 +5,9 @@ module.exports = {
   ],
   window: {
     navigationBarTitleText: 'Remax Wechat Template',
-    navigationBarBackgroundColor: '#282c34'
+    navigationBarBackgroundColor: '#EEEDED',
+    navigationBarTextStyle: 'black',
+    backgroundColor: '#EEEDED'
   },
   tabBar: {
     list: [
@@ -21,5 +23,6 @@ module.exports = {
         selectedIconPath: '/images/userclick.png'
       },
     ]
-  }
+  },
+  entryPagePath: 'pages/me/index', // NOTE: delete this
 }
