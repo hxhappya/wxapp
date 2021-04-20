@@ -8,11 +8,9 @@ import './app.css'
 export const Context = createContext({})
 
 export default function App ({children}) {
+  const user = wx.getStorageSync('userInfo')
   const [context, setContext] = useState({
-    user: {
-      name: '',
-      avatarUrl: '',
-    }
+    user,
   })
 
   console.log('rerender', context)

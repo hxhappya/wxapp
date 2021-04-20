@@ -1,7 +1,7 @@
 
 import * as React from 'react'
 import {useEffect} from 'react'
-import {View, Image} from 'remax/wechat'
+import {View, Image, Text} from 'remax/wechat'
 
 import LoginButton from '../../components/LoginButton'
 import {useContext} from '../../hooks'
@@ -10,43 +10,75 @@ import './index.css'
 
 
 const IndexPage = () => {
-  const [context, setContext] = useContext()
-
-  const onGetUserInfo = event => {
-    console.log('avatarUrl', event.userInfo.avatarUrl) // TODELETE
-    const {userInfo} = event
-
-    setContext(prev => ({
-      ...prev,
-      user: {
-        ...prev.user,
-        avatarUrl: userInfo.avatarUrl,
-      }
-    }))
-  }
+  const [context] = useContext()
 
   useEffect(() => {
     console.log('context', context)
     console.count('rerender me')
   }, [context])
 
+  const goHistory = event => {
+    wx.navigateTo({
+      url: '/pages/creditlist/index',
+      complete: console.log
+    })
+  }
+
   return (
     <View className="app">
-      <View className="header">
-        {context.user.avatarUrl
-          ? (
-            <Image
-              src={context.user.avatarUrl}
-              className="logo"
-              alt="logo"
-            />
-          )
-          : null
-        }
-        <LoginButton onGetUserInfo={onGetUserInfo}>
-          <View className="text">Me</View>
-        </LoginButton>
-      </View>
+      {
+        context.user.userId ? (
+          <>
+            <View className="header flex background--white">
+              {context.user.avatarUrl
+                ? (
+                  <Image
+                    src={context.user.avatarUrl}
+                    className="avatar"
+                    alt="avatar"
+                  />
+                )
+                : null
+              }
+              <View className="userinfo flex flex--verticle flex--1">
+                <View className="nickname">{context.user.nickName}</View>
+                <View className="credit">积分：{context.user.credit}</View>
+                {/* TODO: 类似微信的分享码 */}
+              </View>
+            </View>
+            <View className="flex block history" onClick={goHistory}>
+              <Image
+                src="/images/icon.png"
+                className="icon"
+                alt="icon"
+              />
+              <Text>积分记录</Text>
+            </View>
+            <View className="flex block share-code">
+              <Image
+                src="/images/icon.png"
+                className="icon"
+                alt="icon"
+              />
+              <Text>分享码</Text>
+            </View>
+          </>
+        ) : (
+          <>
+            <View className="icon-wrapper flex flex--center background--transparent">
+              <Image
+                src="/images/icon.png"
+                className="icon"
+                alt="icon"
+              />
+            </View>
+            <LoginButton>
+              <View className="text">授权登录</View>
+            </LoginButton>
+          </>
+        )
+      }
+
     </View>
   )
 }

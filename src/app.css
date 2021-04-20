@@ -1,3 +1,39 @@
 page {
-  background: #282c34;
+  background-color: #EEEDED;
+  color: #333;
+}
+
+.app > view {
+  background-color: white;
+}
+
+.block {
+  background-color: white;
+  padding: 20px 40px;
+  margin-bottom: 20px;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex--verticle {
+  flex-direction: column;
+}
+
+.flex--center {
+  justify-content: center;
+  align-items: center;
+}
+
+.flex--1 {
+  flex: 1;
+}
+
+.background--white {
+  background-color: white;
+}
+
+.background--transparent {
+  background-color: transparent !important;
 }
