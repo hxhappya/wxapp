@@ -17,34 +17,67 @@ const IndexPage = () => {
     console.count('rerender me')
   }, [context])
 
+  const goHistory = event => {
+    wx.navigateTo({
+      url: '/pages/creditlist/index',
+      complete: console.log
+    })
+  }
+
   return (
     <View className="app">
-      <View className="header flex background--white">
-        {context.user.avatarUrl
-          ? (
-            <Image
-              src={context.user.avatarUrl}
-              className="avatar"
-              alt="avatar"
-            />
-          )
-          : null
-        }
-        <View className="userinfo flex flex--verticle flex--1">
-          <View className="nickname">{context.user.nickName}</View>
-          <View className="credit">积分：{context.user.credit}</View>
-        </View>
-      </View>
-
-      <View className="block history">
-        <Text>积分记录</Text>
-      </View>
-
-      <View className="block">
-        <LoginButton>
-          <View className="text">授权登录</View>
-        </LoginButton>
-      </View>
+      {
+        context.user.userId ? (
+          <>
+            <View className="header flex background--white">
+              {context.user.avatarUrl
+                ? (
+                  <Image
+                    src={context.user.avatarUrl}
+                    className="avatar"
+                    alt="avatar"
+                  />
+                )
+                : null
+              }
+              <View className="userinfo flex flex--verticle flex--1">
+                <View className="nickname">{context.user.nickName}</View>
+                <View className="credit">积分：{context.user.credit}</View>
+                {/* TODO: 类似微信的分享码 */}
+              </View>
+            </View>
+            <View className="flex block history" onClick={goHistory}>
+              <Image
+                src="/images/icon.png"
+                className="icon"
+                alt="icon"
+              />
+              <Text>积分记录</Text>
+            </View>
+            <View className="flex block share-code">
+              <Image
+                src="/images/icon.png"
+                className="icon"
+                alt="icon"
+              />
+              <Text>分享码</Text>
+            </View>
+          </>
+        ) : (
+          <>
+            <View className="icon-wrapper flex flex--center background--transparent">
+              <Image
+                src="/images/icon.png"
+                className="icon"
+                alt="icon"
+              />
+            </View>
+            <LoginButton>
+              <View className="text">授权登录</View>
+            </LoginButton>
+          </>
+        )
+      }
 
     </View>
   )

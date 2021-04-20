@@ -2,6 +2,7 @@ module.exports = {
   pages: [
     'pages/index/index',
     'pages/me/index',
+    'pages/creditlist/index',
   ],
   window: {
     navigationBarTitleText: 'Remax Wechat Template',
