@@ -4,17 +4,27 @@
 }
 
 .logo {
-  height: 240px;
-  width: 240px;
+  height: 200px;
+  width: 200px;
   pointer-events: none;
 }
 
 .text {
   margin-top: 64px;
 }
-
+.brow{
+  color:black;
+}
 .header {
-  padding-top: 30%;
-  font-size: 40px;
-  color: white;
+  padding-top: 5%;
+  font-size: 45px;
+  color:#FFE4B5;
+  background-color: #FFE4B5 !important;
+  /*justify-content: center;
+  align-items: flex-start;*/
+  flex-direction: row-reverse;
+}
+.header .logo{
+  margin-right: 60px;
+
 }

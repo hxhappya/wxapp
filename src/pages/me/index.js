@@ -23,7 +23,12 @@ const IndexPage = () => {
       complete: console.log
     })
   }
-
+  const share_code = event => {
+    wx.navigateTo({
+      url: '/pages/share_code/index',
+      complete: console.log
+    })
+  }
   return (
     <View className="app">
       {
@@ -45,18 +50,25 @@ const IndexPage = () => {
                 <View className="credit">积分：{context.user.credit}</View>
                 {/* TODO: 类似微信的分享码 */}
               </View>
+              <View className="qr_code flex" onClick={share_code}>
+                <Image
+                  src="/images/qrcode.png"
+                  className="icon"
+                  alt="icon"
+                />
+              </View>
             </View>
             <View className="flex block history" onClick={goHistory}>
               <Image
-                src="/images/icon.png"
+                src="/images/history.png"
                 className="icon"
                 alt="icon"
               />
               <Text>积分记录</Text>
             </View>
-            <View className="flex block share-code">
+            <View className="flex block share-code" onClick={share_code}>
               <Image
-                src="/images/icon.png"
+                src="/images/share.png"
                 className="icon"
                 alt="icon"
               />
