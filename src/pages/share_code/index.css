@@ -1,0 +1,31 @@
+.app {
+  border-radius: 15%;
+  text-align: center;
+  padding-top: 8%;
+}
+.header{
+border-radius: 10%;
+}
+
+.body{
+  border-radius: 15%;
+}
+
+.button{
+  border-radius: 10%;
+}
+.headercode{
+  width: 90px;
+  height: 90px;
+}
+
+.arrow{
+  width: 70px;
+  height: 70px;
+}
+
+.block3 {
+  background-color: white;
+  padding: 1px 1px;
+  margin-bottom: 2px;
+}

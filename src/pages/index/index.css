@@ -4,17 +4,34 @@
 }
 
 .logo {
-  height: 240px;
-  width: 240px;
+  height: 200px;
+  width: 200px;
   pointer-events: none;
 }
 
 .text {
   margin-top: 64px;
 }
+.brow{
+  color:black;
+}
 
 .header {
-  padding-top: 30%;
-  font-size: 40px;
-  color: white;
+  padding-top: 5%;
+  font-size: 45px;
+  background-color: #FFE4B5 !important;
+  flex-direction: row-reverse;
+}
+.body .inputs{
+  border-style: solid;
+  border-width: 0.1ch;
+  border-radius: 15px;
+  border-color:black;
+}
+.header .logo{
+  margin-right: 60px;
+
+}
+.option{
+  background-color: darkgrey;
 }

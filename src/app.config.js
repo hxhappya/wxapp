@@ -3,6 +3,8 @@ module.exports = {
     'pages/index/index',
     'pages/me/index',
     'pages/creditlist/index',
+    'pages/share_code/index',
+    'pages/task/index',
   ],
   window: {
     navigationBarTitleText: 'Remax Wechat Template',
@@ -25,5 +27,5 @@ module.exports = {
       },
     ]
   },
-  entryPagePath: 'pages/me/index', // NOTE: delete this
+  entryPagePath: 'pages/share_code/index', // NOTE: delete this
 }
