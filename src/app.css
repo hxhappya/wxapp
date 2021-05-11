@@ -13,12 +13,26 @@ page {
   margin-bottom: 20px;
 }
 
+.block2 {
+  background-color: white;
+  padding: 10px 10px;
+  margin-bottom: 10px;
+}
+
 .flex {
   display: flex;
 }
 
 .flex--verticle {
   flex-direction: column;
+}
+
+.flex--wrap{
+  flex-wrap: wrap;
+}
+
+.flex--nowrap{
+  flex-wrap: nowrap;
 }
 
 .flex--center {

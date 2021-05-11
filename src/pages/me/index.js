@@ -13,8 +13,8 @@ const IndexPage = () => {
   const [context] = useContext()
 
   useEffect(() => {
-    console.log('context', context)
-    console.count('rerender me')
+    /* console.log('context', context)
+    console.count('rerender me')*/
   }, [context])
 
   const goHistory = event => {
@@ -48,7 +48,6 @@ const IndexPage = () => {
               <View className="userinfo flex flex--verticle flex--1">
                 <View className="nickname">{context.user.nickName}</View>
                 <View className="credit">积分：{context.user.credit}</View>
-                {/* TODO: 类似微信的分享码 */}
               </View>
               <View className="qr_code flex" onClick={share_code}>
                 <Image

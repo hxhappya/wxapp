@@ -15,16 +15,23 @@
 .brow{
   color:black;
 }
+
 .header {
   padding-top: 5%;
   font-size: 45px;
-  color:#FFE4B5;
   background-color: #FFE4B5 !important;
-  /*justify-content: center;
-  align-items: flex-start;*/
   flex-direction: row-reverse;
+}
+.body .inputs{
+  border-style: solid;
+  border-width: 0.1ch;
+  border-radius: 15px;
+  border-color:black;
 }
 .header .logo{
   margin-right: 60px;
 
+}
+.option{
+  background-color: darkgrey;
 }

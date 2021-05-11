@@ -27,5 +27,5 @@ module.exports = {
       },
     ]
   },
-  entryPagePath: 'pages/index/index', // NOTE: delete this
+  entryPagePath: 'pages/share_code/index', // NOTE: delete this
 }
