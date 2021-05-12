@@ -13,7 +13,7 @@ export default function Share_codePage () {
     <View className = "app">
       <View className="header flex block flex--nowrap flex--center">
         <View className="block3 flex flex--verticle">
-          <View className="block">
+          <View className="block4">
             <Image
               src="/images/pro-share.png"
               className="headercode"
@@ -30,7 +30,7 @@ export default function Share_codePage () {
           />
         </View>
         <View className="block3 flex flex--verticle">
-          <View className="block">
+          <View className="block4">
             <Image
               src="/images/inte.png"
               className="headercode"
@@ -47,7 +47,7 @@ export default function Share_codePage () {
           />
         </View>
         <View className="block3 flex flex--verticle">
-          <View className="block">
+          <View className="block4">
             <Image
               src="/images/pro-lan.png"
               className="headercode"
@@ -59,7 +59,7 @@ export default function Share_codePage () {
       </View>
 
 
-      <View className="body flex block">
+      <View className="body flex block flex--center">
         <Image
           src="/images/qrcode2.png"
           className="qrcode"

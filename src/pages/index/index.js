@@ -10,8 +10,10 @@ import './index.css'
 
 const IndexPage = () => {
   const [setopt] = useState('')
-  const classs = () => {
-    setopt(event.detail.Button)
+
+  const classs = (text) => {
+    console.log(text)
+    setopt(text)
   }
 
   const [tasks, setTasks] = useState('')
@@ -27,18 +29,60 @@ const IndexPage = () => {
     setTasks2(event.detail.value)
   }
 
-  const [tasks3, setTasks3] = useState('')
-  const handleinput3 = (event) => {
-    console.log('event', event)
-    setTasks3(event.detail.value)
+
+  const [number, setNumber] = useState(0)
+  const add1 = () => setNumber(prevNumber => prevNumber + 5)
+  const substract1 = (number) => {
+    if(number === 0)
+    {
+      console.log(number)
+    }
+    else
+    {
+      setNumber(prevNumber => prevNumber - 5)
+    }
   }
+
 
   const datum = () => {
     if (context.user.credit >= 2) {
       context.user.credit -= 2
-      //上传button task task2 task3
+      wx.showModal({
+        title: '提示',
+        content: '确定花费2积分发布任务',
+        success (res) {
+          if (res.confirm) {
+            //上传button task task2 number
+            wx.showModal({
+              title: '提示',
+              content: '任务已成功发布',
+              success (res) {
+                if (res.confirm) {
+                  console.log('用户点击确定')
+                } else if (res.cancel) {
+                  wx.showToast({
+                    title: '任务已发布',
+                    icon: 'error',
+                    duration: 2000
+                  })
+                  console.log('用户点击取消')
+                }
+              }
+            })
+            console.log('用户点击确定')
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+          }
+        }
+      })
+
     } else {
       //换成提示页面,积分不足
+      wx.showToast({
+        title: '积分不足',
+        icon: 'error',
+        duration: 2000
+      })
     }
 
 
@@ -71,11 +115,11 @@ const IndexPage = () => {
         <View className="block2 flex flex--nowrap">
           <View className="block2" >
           </View>
-          <Button hoverClassName='option' onTap={classs} hoverStayTime={2000}>帮取外卖</Button>
+          <Button hoverClassName='option' onTap={() => classs('帮取外卖')} hoverStayTime={2000}>帮取外卖</Button>
 
           <View className="block2" >
           </View>
-          <Button hoverClassName='option' onTap={classs} hoverStayTime={2000}>帮取快递</Button>
+          <Button hoverClassName='option' onTap={() => classs('帮取快递')} hoverStayTime={2000}>帮取快递</Button>
         </View>
 
         <View className="block2 flex flex--nowrap">
@@ -90,10 +134,16 @@ const IndexPage = () => {
             <Input value={tasks2} onInput={handleinput2} type="number"/>
           </View>
         </View>
-        <View className="block2 flex flex--nowrap">
+        <View className="block2 flex flex--nowrap flex--horizon">
           <Text>时间:</Text>
-          <View className="inputs">
-            <Input value={tasks3} onInput={handleinput3} type="number"/>
+          <View className="block">
+            <Button className="block" onTap={() => substract1(number)}>-</Button>
+          </View>
+          <View className="times">
+            {number}
+          </View>
+          <View className="block">
+            <Button className="block" onTap={add1}>+</Button>
           </View>
         </View>
         <Button hoverClassName='option' onTap={datum} hoverStayTime={2000}>确认</Button>

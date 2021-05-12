@@ -8,7 +8,8 @@ border-radius: 10%;
 }
 
 .body{
-  border-radius: 15%;
+  border-radius: 1%;
+
 }
 
 .button{
@@ -28,4 +29,15 @@ border-radius: 10%;
   background-color: white;
   padding: 1px 1px;
   margin-bottom: 2px;
+}
+
+.block4 {
+  background-color: white;
+  padding: 2px 40px;
+  margin-bottom: 2px;
+}
+
+.qrcode{
+  width: 80vw;
+  height:50vh;
 }

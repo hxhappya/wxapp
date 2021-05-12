@@ -27,6 +27,10 @@ page {
   flex-direction: column;
 }
 
+.flex--horizon{
+align-items: center;
+}
+
 .flex--wrap{
   flex-wrap: wrap;
 }

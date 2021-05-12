@@ -28,6 +28,11 @@
   border-radius: 15px;
   border-color:black;
 }
+
+.body .times{
+  flex-grow: 2;
+
+}
 .header .logo{
   margin-right: 60px;
 
