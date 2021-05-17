@@ -1,0 +1,16 @@
+
+.tabs {
+  display: flex;
+  justify-content: center;
+}
+
+.tab {
+  border: 1px solid #ddd;
+  padding: 20px 40px;
+  margin: 10px;
+}
+
+.tab--active {
+  color: seagreen;
+  background-color: red;
+}
