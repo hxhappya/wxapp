@@ -146,6 +146,9 @@ const IndexPage = () => {
             <Button className="block" onTap={add1}>+</Button>
           </View>
         </View>
+        <View className="notes">
+        注释：此时间为任务发布后多久可以接
+        </View>
         <Button hoverClassName='option' onTap={datum} hoverStayTime={2000}>确认</Button>
       </View>
 

@@ -40,3 +40,11 @@
 .option{
   background-color: darkgrey;
 }
+
+.notes{
+  background-color: white;
+  color:darkgrey;
+  font-size: 30px;
+  padding: 1px 1px;
+  margin-bottom: 2px;
+}
